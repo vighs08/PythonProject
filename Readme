@@ -1,0 +1,68 @@
+# PythonProject
+
+A collection of Python + Selenium WebDriver scripts for automated UI testing of e-commerce-style web applications (e.g. login, registration, cart, checkout, product search, and general UI interactions such as frames, waits, and scrolling).
+
+## Overview
+
+This repository is a personal/learning project containing standalone Selenium automation scripts rather than a single structured test suite. Each `.py` file automates and verifies one specific user flow or UI behavior on a demo e-commerce site.
+
+## Tech Stack
+
+- **Language:** Python
+- **Automation:** [Selenium WebDriver](https://www.selenium.dev/) (`webdriver`, `By`, `ActionChains`, `WebDriverWait`, `expected_conditions`)
+- **Browser:** Google Chrome (via `webdriver.Chrome()`)
+
+## Project Structure
+
+Scripts are organized by feature/scenario rather than folders. Notable examples include:
+
+| Category | Example Scripts |
+|---|---|
+| **Authentication** | `loginuser.py`, `registeruser.py` |
+| **Cart & Checkout** | `ADD products in cart.py`, `remove products from cart.py`, `verify product quantity in cart.py`, `place order login before checkout.py`, `place order register before checkout.py`, `place order register while checkout.py`, `verify address details in checkoutpage.py` |
+| **Product Discovery** | `search product.py`, `search products and verify cart after login.py`, `view category products.py`, `view and cart brand products.py`, `verify all products and product detail page.py`, `add to cart from recommended items.py` |
+| **Reviews & Subscriptions** | `add review on product.py`, `verify subscription in cart page.py`, `verify subscription in home page.py` |
+| **Invoicing** | `dowmload invoice after purchase order.py` |
+| **General UI / Selenium Utilities** | `frames.py`, `nestedframes.py`, `datepicker.py`, `wait.py`, `assert.py`, `incorrect.py`, `contact us form.py`, `verify scroll up using arrow button and scroll down functionalty.py`, `verify scroll up without arrow button and scroll down functionalty.py` |
+| **Misc** | `main.py`, `main1.py`, `python3 village_workforce_connect.py`, `Verify Test Cases Page.py` |
+
+## Prerequisites
+
+- Python 3.x
+- Google Chrome browser installed
+- ChromeDriver matching your Chrome version (or use Selenium 4.6+, which manages drivers automatically via Selenium Manager)
+
+## Installation
+
+```bash
+git clone https://github.com/vighs08/PythonProject.git
+cd PythonProject
+pip install selenium
+```
+
+## Usage
+
+Each script is self-contained and can be run individually:
+
+```bash
+python "loginuser.py"
+```
+
+Replace the filename with any script from the repository (quote filenames that contain spaces).
+
+Most scripts follow the same pattern:
+1. Launch a Chrome browser session
+2. Navigate to the target web page
+3. Wait for and interact with specific elements (click, type, scroll, etc.)
+4. Assert/verify the expected outcome and print a pass/fail message
+5. Close the browser
+
+## Notes
+
+- These are individual/exploratory automation scripts, not a unified test framework (no `pytest`/`unittest` structure or shared page objects).
+- Target URLs and site-specific selectors are hardcoded within each script.
+- Contributions or refactors (e.g. into a Page Object Model, or a `pytest` suite) are welcome via pull request.
+
+## License
+
+No license specified. Please contact the repository owner for usage permissions.
